@@ -2,7 +2,7 @@
 
 This repository contains an anonymized artifact for **FedCGA**, a context-guided aggregation framework for privacy-preserving dynamic pricing in ride-hailing services.
 
-The repository keeps the core preprocessing, model, training, and evaluation code. Raw input data, generated client feature files, checkpoints, and local development files have been removed.
+
 
 ## Repository structure
 
