@@ -1,0 +1,43 @@
+fedala:
+  model_type: "tcn"
+  model_params:
+    mlp:
+      input_dim: 19
+      hidden_dim: 32
+      output_dim: 1
+      dropout: 0.1
+    residual:
+      input_dim: 19
+      hidden_dim: 64
+      output_dim: 1
+      dropout: 0.1
+    wide:
+      input_dim: 19
+      hidden_dim: 128
+      output_dim: 1
+      dropout: 0.15
+    transformer:
+      input_dim: 19
+      d_model: 128
+      nhead: 8
+      num_layers: 3
+      dropout: 0.1
+  rounds: 20
+  local_epochs: 5
+  learning_rate: 0.002
+  clients_per_round: 50
+  ala_config:
+    batch_size: 32
+    rand_percent: 80
+    layer_idx: 1
+    eta: 1.0
+    threshold: 0.1
+    num_pre_loss: 10
+  model_feature_config:
+    enabled: true
+    init_strategy: "adaptive"
+  model_features:
+    complexity_scaling: 1.0
+    type_scaling: 1.0
+    transformer_multiplier: 1.1
+    mlp_multiplier: 0.9

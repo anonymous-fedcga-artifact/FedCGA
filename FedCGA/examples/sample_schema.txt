@@ -1,0 +1,1 @@
+car_id,date,trip_start_time,trip_end_time,daytype,month,day,slo,sla,elo,ela,traj,weather_0,weather_1,weather_2,weather_3,weather_4,weather_5,dp_cur

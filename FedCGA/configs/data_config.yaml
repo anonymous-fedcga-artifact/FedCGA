@@ -1,0 +1,83 @@
+data_info:
+  name: "ride_hailing_order_data"
+  version: "1.0"
+  description: "Trip-level order data for federated dynamic pricing."
+  date_format: "%Y/%m/%d"
+  datetime_format: "%Y/%m/%d %H:%M"
+
+column_mapping:
+  car_id: "car_id"
+  date: "date"
+  target: "dp_cur"
+  start_time: "trip_start_time"
+  end_time: "trip_end_time"
+  day_type: "daytype"
+  month: "month"
+  day: "day"
+  start_lng: "slo"
+  start_lat: "sla"
+  end_lng: "elo"
+  end_lat: "ela"
+  trajectory: "traj"
+  weather_0: "weather_0"
+  weather_1: "weather_1"
+  weather_2: "weather_2"
+  weather_3: "weather_3"
+  weather_4: "weather_4"
+  weather_5: "weather_5"
+
+feature_config:
+  basic_features:
+    enable: true
+    features:
+      - "hour_sin"
+      - "hour_cos"
+      - "duration"
+      - "start_hour"
+      - "day_of_week"
+      - "is_weekend"
+      - "straight_distance"
+      - "speed"
+      - "direction"
+
+  trajectory_features:
+    enable: true
+    features:
+      - "traj_length"
+      - "traj_complexity"
+      - "num_points"
+
+  weather_features:
+    enable: true
+    features:
+      - "weather_0_norm"
+      - "weather_1_norm"
+      - "weather_2_norm"
+      - "weather_3_norm"
+      - "weather_4_norm"
+      - "weather_5_norm"
+
+  location_features:
+    enable: true
+    features:
+      - "slo"
+      - "sla"
+      - "elo"
+      - "ela"
+
+processing_params:
+  min_samples_per_driver: 20
+  random_seed: 42
+  normalize_features: true
+  trajectory_processing:
+    enable: true
+    haversine_radius: 6371
+
+output_config:
+  save_driver_features: true
+  save_metadata: true
+  compress_features: true
+  feature_format: "npz"
+  metadata_format: "csv"
+  feature_dir: "features"
+  metadata_dir: "metadata"

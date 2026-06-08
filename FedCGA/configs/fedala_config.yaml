@@ -1,0 +1,53 @@
+fedala:
+  algorithm: "fedala"
+  model_type: "improved_mlp"
+  rounds: 50
+  clients_per_round: 50
+  local_epochs: 5
+  learning_rate: 0.001
+  ala_config:
+    rand_percent: 80
+    layer_idx: 1
+    eta: 1.0
+    threshold: 0.1
+    num_pre_loss: 10
+    batch_size: 32
+    device: "cpu"
+  model_params:
+    mlp:
+      input_dim: 19
+      hidden_dim: 32
+      output_dim: 1
+      dropout: 0.1
+    residual:
+      input_dim: 19
+      hidden_dim: 64
+      output_dim: 1
+      dropout: 0.1
+    wide:
+      input_dim: 19
+      hidden_dim: 128
+      output_dim: 1
+      dropout: 0.15
+    improved_mlp:
+      input_dim: 19
+      hidden_dims: [ 64, 32 ]
+      output_dim: 1
+      dropout: 0.1
+    transformer:
+      input_dim: 19
+      d_model: 128
+      nhead: 8
+      num_layers: 3
+      dropout: 0.1
+    lstm:
+      input_dim: 19
+      hidden_size: 16
+      num_layers: 1
+      dropout: 0.4
+      bidirectional: false
+    tcn:
+      input_dim: 19
+      num_channels: [ 16, 8 ]
+      kernel_size: 3
+      dropout: 0.1

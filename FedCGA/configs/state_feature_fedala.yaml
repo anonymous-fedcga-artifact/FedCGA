@@ -1,0 +1,48 @@
+fedala:
+  model_type: "tcn"
+  model_params:
+    mlp:
+      input_dim: 19
+      hidden_dim: 32
+      output_dim: 1
+      dropout: 0.1
+    residual:
+      input_dim: 19
+      hidden_dim: 64
+      output_dim: 1
+      dropout: 0.1
+    wide:
+      input_dim: 19
+      hidden_dim: 128
+      output_dim: 1
+      dropout: 0.15
+    transformer:
+      input_dim: 19
+      d_model: 128
+      nhead: 8
+      num_layers: 3
+      dropout: 0.1
+  rounds: 20
+  local_epochs: 5
+  learning_rate: 0.002
+  clients_per_round: 50
+  ala_config:
+    batch_size: 32
+    rand_percent: 80
+    layer_idx: 1
+    eta: 1.0
+    threshold: 0.1
+    num_pre_loss: 10
+  state_feature_config:
+    enabled: true
+    init_strategy: "adaptive"
+    overfit_monitor_window: 5
+  state_features:
+    early_training_weight: 1.3
+    late_training_weight: 0.7
+    high_overfit_weight: 0.6
+    high_overfit_lr_multiplier: 0.5
+    progress_threshold_early: 0.3
+    progress_threshold_late: 0.7
+    overfit_threshold_high: 0.6
+    overfit_threshold_medium: 0.3
