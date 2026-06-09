@@ -95,12 +95,12 @@ outputs/<method_name>/training_results/final_training_result.json
 
 The following values were extracted from the original local experiment logs before removing generated output files.
 
-| Method | Model | RMSE | MAE | R2 |
-|---|---|---:|---:|---:|
-| FedAvg | Transformer | 0.146124 | 0.115606 | - |
-| FedProx | Transformer | 0.152310 | 0.120956 | - |
-| FedALA | Transformer | 0.172175 | 0.135840 | - |
-| FedCGA | Transformer | 0.189680 | 0.149470 | - |
+| Method | Model | RMSE | MAE |
+|---|---|---:|---:|
+| FedAvg | Transformer | 0.146124 | 0.115606 | 
+| FedProx | Transformer | 0.152310 | 0.120956 | 
+| FedALA | Transformer | 0.172175 | 0.135840 | 
+| FedCGA | Transformer | 0.189680 | 0.149470 | 
 
 
 ## Notes for anonymous artifact review
