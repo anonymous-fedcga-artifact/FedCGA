@@ -100,7 +100,6 @@ The following values were extracted from the original local experiment logs befo
 | FedAvg | Transformer | 0.146124 | 0.115606 | - |
 | FedProx | Transformer | 0.152310 | 0.120956 | - |
 | FedALA | Transformer | 0.172175 | 0.135840 | - |
-| FedCGA | Transformer | 0.189680 | 0.149470 | - |
 
 
 ## Notes for anonymous artifact review
